@@ -1,0 +1,23 @@
+.newPostsBlock,
+.newPostForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.newPostsBlock__title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.newPostForm textarea {
+    margin-bottom: 10px;
+    height: 100px;
+    padding: 10px;
+}
+
+.newPostForm button {
+    margin-bottom: 20px;
+}

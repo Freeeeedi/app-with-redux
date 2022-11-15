@@ -1,0 +1,99 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    height: 100%;
+}
+
+.dialogsList {
+    padding: 10px;
+    border-right: 1px solid gray;
+}
+
+.dialogItem {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.dialogItem img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.dialogsList a.active {
+    color: cornflowerblue;
+}
+
+.dialogsList a {
+    color: #fff;
+    display: flex;
+    align-items: flex-start;
+}
+
+.dialogMessageContainer,
+.dialogMyMessageContainer {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.dialogMessageContainer .img {
+    margin-right: 10px;
+}
+
+.dialogMyMessageContainer {
+    flex-direction: row-reverse;
+}
+
+.dialogMyMessageContainer .img {
+    margin-left: 10px;
+}
+
+.message {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.dialogMessageContainer .message {
+    background-color: rgb(216, 216, 44);
+}
+
+.dialogMyMessageContainer .message {
+    background-color: rgb(44 164 216);
+}
+
+.dialogMessages {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.postMessageForm {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.postMessageForm textarea {
+    width: 400px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-right: 30px;
+}
+
+.postMessageForm input[type="submit"] {
+    height: 25px;
+    border-radius: 5px;
+}
