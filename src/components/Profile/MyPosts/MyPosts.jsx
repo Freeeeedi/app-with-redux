@@ -1,7 +1,6 @@
 import Post from './Post/Post';
 import style from './MyPosts.module.css';
 import React from 'react';
-import { addPostActionCreater, updateNewPostTextActionCreater } from './../../../redux/profile-reducer';
 
 
 const MyPosts = (props) => {
@@ -11,12 +10,12 @@ const MyPosts = (props) => {
 
     let addPost = () => {
         let newPostText = newPost.current.value;
-        props.dispatch(addPostActionCreater(newPostText));
+        props.addPost(newPostText);
         newPost.current.value = '';
     }
     let onChangeTextarea = () => {
         let newPostText = newPost.current.value;
-        props.dispatch(updateNewPostTextActionCreater(newPostText));
+        props.updateNewPostText(newPostText);
     };
     return (
         <div className={style.newPostsBlock}>
