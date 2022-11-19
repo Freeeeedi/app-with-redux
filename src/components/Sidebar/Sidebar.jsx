@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import MyFriends from './MyFriends/MyFriends';
+import MyFriendsContainer from './MyFriendsContainer';
 import style from './Sidebar.module.css';
 
 const Sidebar = (props) => {
@@ -12,7 +12,7 @@ const Sidebar = (props) => {
                 <li className={style.item}><NavLink to='/music' className={NavData => NavData.isActive ? style.active : style.item}>Music</NavLink></li>
                 <li className={style.item}><NavLink to='/settings' className={NavData => NavData.isActive ? style.active : style.item}>Settings</NavLink></li>
             </ul>
-            <MyFriends state={props.state.myFriends} />
+            <MyFriendsContainer />
         </nav>
     );
 }

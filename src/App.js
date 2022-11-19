@@ -11,11 +11,11 @@ function App(props) {
     <BrowserRouter>
       <div className="wrapper">
         <Header />
-        <Sidebar state={props.state.sidebar} />
+        <Sidebar />
         <main className='main'>
           <Routes>
-            <Route path="/profile" element={<Profile store={props.store} />} />
-            <Route path="/dialogs/*" element={<DialogsContainer store={props.store} />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/dialogs/*" element={<DialogsContainer />} />
             <Route path="/news/" element={<News />} />
           </Routes>
         </main>
