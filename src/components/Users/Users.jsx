@@ -1,13 +1,13 @@
 import style from './Users.module.css';
+import axios from 'axios';
+import UserPhoto from '../../assets/images/user.jpg';
 
 
 let Users = (props) => {
     if (props.users.length === 0) {
-        props.setUsers([
-            { id: 1, imgUrl: 'https://www.paperlessmovement.com/wp-content/uploads/2019/09/o2dvsv2pnhe.jpg', firstName: 'Sergey', status: 'Create page with users!', location: { country: 'Russia,', sity: 'Kaliningrad' }, followed: true },
-            { id: 2, imgUrl: 'https://www.paperlessmovement.com/wp-content/uploads/2019/09/o2dvsv2pnhe.jpg', firstName: 'Sergey', status: 'Create page with users!', location: { country: 'Russia,', sity: 'Kaliningrad' }, followed: false },
-            { id: 3, imgUrl: 'https://www.paperlessmovement.com/wp-content/uploads/2019/09/o2dvsv2pnhe.jpg', firstName: 'Sergey', status: 'Create page with users!', location: { country: 'Russia,', sity: 'Kaliningrad' }, followed: true },
-        ]);
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+            props.setUsers(response.data.items);
+        });
     }
     return (
         <div>
@@ -15,7 +15,7 @@ let Users = (props) => {
                 props.users.map(u => <div key={u.id} className={style.user}>
                     <div className={style.user_left}>
                         <div className={style.user_img}>
-                            <img src={u.imgUrl} alt="" />
+                            <img src={u.photos.small ? u.photos.small : UserPhoto} alt="" />
                         </div>
                         <div className={style.button}>
                             {u.followed
@@ -26,12 +26,12 @@ let Users = (props) => {
                     </div>
                     <div className={style.user_right}>
                         <div className={style.user_left_info}>
-                            <div>{u.firstName}</div>
+                            <div>{u.name}</div>
                             <div>{u.status}</div>
                         </div>
                         <div className={style.user_right_info}>
-                            <div>{u.location.country}</div>
-                            <div>{u.location.city}</div>
+                            <div>{'u.location.country'}</div>
+                            <div>{'u.location.city'}</div>
                         </div>
                     </div>
                 </div>
